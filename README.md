@@ -34,7 +34,7 @@ def sample(
         ]
         problem = cp.Problem(cp.Minimize(0), constraints)
         try:
-            problem.solve(**kwargs)
+            problem.solve()
             if problem.status == "infeasible":
                 return token_id
         except cp.error.SolverError: # Numerical instability suggests infeasible
