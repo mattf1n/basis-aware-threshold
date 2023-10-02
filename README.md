@@ -1,4 +1,4 @@
-# basis-aware-truncation
+# basis-aware-threshold
 Code for the paper
 
 ## Setup
