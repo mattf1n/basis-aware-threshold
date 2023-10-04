@@ -1,5 +1,5 @@
 # basis-aware-truncation
-Code for the paper
+Code for the paper [Closing the Curious Case of Neural Text Degeneration](https://arxiv.org/abs/2310.01693)
 
 ## Setup
 Clone and navigate to this repository, then
@@ -70,6 +70,18 @@ Generate data with `scripts/unit_test.py`, then generate figures with `scripts/v
 `scripts/viz/tern.py`.
 
 
+## Cite
+
+```bibtex
+@misc{finlayson2023closing,
+      title={Closing the Curious Case of Neural Text Degeneration}, 
+      author={Matthew Finlayson and John Hewitt and Alexander Koller and Swabha Swayamdipta and Ashish Sabharwal},
+      year={2023},
+      eprint={2310.01693},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 ## Contact
 
