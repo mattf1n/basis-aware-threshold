@@ -15,10 +15,10 @@ BAT itself is fairly simple to implement.
 import numpy as np, cvxpy as cp
 
 def sample(
-        embed: np.array,  # Model embedding matrix
+        embed: np.array,  # Model embedding matrix (or SVD approximation)
         threshold: float,  # Truncation threshold
         probs: np.array,  # Model output probabilities
-    ):
+    ) -> int:
     for token_id in np.random.choice(len(probs), size=len(probs), p=probs, replace=False)
         if probs[token_id] >= threshold: # Program will be infeasible, no need to run it
             return token_id
@@ -34,7 +34,7 @@ def sample(
         ]
         problem = cp.Problem(cp.Minimize(0), constraints)
         try:
-            problem.solve(**kwargs)
+            problem.solve()
             if problem.status == "infeasible":
                 return token_id
         except cp.error.SolverError: # Numerical instability suggests infeasible
