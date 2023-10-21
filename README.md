@@ -1,4 +1,4 @@
-# basis-aware-truncation
+# basis-aware-threshold
 Code for the paper [Closing the Curious Case of Neural Text Degeneration](https://arxiv.org/abs/2310.01693)
 
 ## Setup
