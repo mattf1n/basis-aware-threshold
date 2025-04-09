@@ -1,16 +1,10 @@
 # basis-aware-threshold
 Code for the paper [Closing the Curious Case of Neural Text Degeneration](https://arxiv.org/abs/2310.01693)
 
-## Setup
-Clone and navigate to this repository, then
-```
-pip install .
-pip install -r requirements.txt
-```
-
 ## BAT sampling implementation
 
-BAT itself is fairly simple to implement.
+BAT itself is fairly simple to implement. The only requirements you need are `cvxpy` and `numpy`. You can install from `requirements.txt`.
+
 ```python
 import numpy as np, cvxpy as cp
 
@@ -19,7 +13,7 @@ def sample(
         threshold: float,  # Truncation threshold
         probs: np.array,  # Model output probabilities
     ) -> int:
-    for token_id in np.random.choice(len(probs), size=len(probs), p=probs, replace=False)
+    for token_id in np.random.choice(len(probs), size=len(probs), p=probs, replace=False):
         if probs[token_id] >= threshold: # Program will be infeasible, no need to run it
             return token_id
 
@@ -44,6 +38,12 @@ def sample(
 Our implementation can be found in `src/parallel.py`
 
 ## Experiments
+
+### Setup
+To replicate experiments, clone and navigate to this repository, then
+```
+pip install .
+```
 
 ### Parameter matching
 

@@ -3,7 +3,7 @@ import jax, cvxpy as cp, numpy as np
 from scipy.special import logsumexp, softmax
 from tqdm import tqdm
 import json, operator, sys, os, itertools, functools, argparse, random, multiprocessing
-from src.lp import svd
+from basis_aware_sampling.lp import svd
 from dataclasses import dataclass
 
 
